@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel Menu Card</title>
+  <style>
+    :root{--bg:#f7f9fb;--card:#fff;--accent:#d35400;--muted:#6b7a86}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:#123}
+    .container{max-width:900px;margin:28px auto;padding:20px}
+    .menu-card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(15,30,50,0.08)}
+    header{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid #f0f3f6}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:18px}
+    h1{margin:0;font-size:1.4rem}
+    .meta{color:var(--muted);font-size:0.9rem}
+
+    .content{display:grid;grid-template-columns:1fr 320px;gap:18px;padding:20px}
+    .section{padding-right:6px}
+    .category{margin-bottom:18px}
+    .category h2{margin:0 0 8px 0;font-size:1.05rem;color:#0b3a57}
+    .item{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 8px;border-radius:8px}
+    .item + .item{margin-top:6px}
+    .item .name{font-weight:700}
+    .item .desc{font-size:0.88rem;color:var(--muted);margin-top:4px}
+    .price{font-weight:800;color:var(--accent)}
+
+    aside.order{background:#fbfbff;border-left:1px solid #f0f3f6;padding:20px;border-radius:8px}
+    .order h3{margin-top:0}
+    .order .note{font-size:0.9rem;color:var(--muted)}
+    .order .cta{display:block;margin-top:12px;padding:12px;text-align:center;background:var(--accent);color:white;border-radius:10px;text-decoration:none;font-weight:800}
+
+    footer{padding:14px 22px;border-top:1px solid #f0f3f6;background:linear-gradient(180deg,#fff,#fbfbff);font-size:0.9rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* small screens */
+    @media (max-width:880px){
+      .content{grid-template-columns:1fr}
+      aside.order{order:2}
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <article class="menu-card" aria-label="Hotel menu card">
+      <header>
+        <div class="brand">
+          <div class="logo">HM</div>
+          <div>
+            <h1>Hotel Sunrise</h1>
+            <div class="meta">Open: 7:00 AM – 11:00 PM • 123 Main Street</div>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-weight:800;color:var(--accent)">Special Today</div>
+          <div class="meta">Chef's Masala Grilled Fish</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="section">
+
+          <div class="category">
+            <h2>Breakfast</h2>
+            <div class="item">
+              <div>
+                <div class="name">Classic Omelette</div>
+                <div class="desc">3 eggs, herbs, toasted bread</div>
+              </div>
+              <div class="price">₹199</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Masala Dosa</div>
+                <div class="desc">Crispy dosa with potato masala, sambar</div>
+              </div>
+              <div class="price">₹149</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Fruit Platter</div>
+                <div class="desc">Seasonal fruits with honey</div>
+              </div>
+              <div class="price">₹249</div>
+            </div>
+          </div>
+
+          <div class="category">
+            <h2>Main Course</h2>
+            <div class="item">
+              <div>
+                <div class="name">Butter Chicken</div>
+                <div class="desc">Creamy tomato gravy, served with naan</div>
+              </div>
+              <div class="price">₹359</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Paneer Lababdar</div>
+                <div class="desc">Cottage cheese in rich gravy</div>
+              </div>
+              <div class="price">₹319</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Grilled Fish</div>
+                <div class="desc">Catch of the day, lemon butter</div>
+              </div>
+              <div class="price">₹449</div>
+            </div>
+          </div>
+
+          <div class="category">
+            <h2>Desserts & Beverages</h2>
+            <div class="item">
+              <div>
+                <div class="name">Gulab Jamun (2 pcs)</div>
+                <div class="desc">Warm syrup-soaked delights</div>
+              </div>
+              <div class="price">₹99</div>
+            </div>
+
+            <div class="item">
+              <div>
+                <div class="name">Masala Chai</div>
+                <div class="desc">Spiced tea — small / large</div>
+              </div>
+              <div class="price">₹39 / ₹59</div>
+            </div>
+          </div>
+
+        </section>
+
+        <aside class="order">
+          <h3>Order & Info</h3>
+          <p class="note">Call to order: +91 98765 43210</p>
+          <p class="note">Room service available • Card & cash accepted</p>
+          <a class="cta" href="#">Place Order</a>
+
+          <div style="margin-top:14px;border-top:1px dashed #eef3f6;padding-top:12px">
+            <strong>Allergens</strong>
+            <p class="note" style="margin:6px 0 0">Please inform staff about allergies or dietary restrictions.</p>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        <div>© Hotel Sunrise</div>
+        <div>Complimentary Wi‑Fi • GST included</div>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
